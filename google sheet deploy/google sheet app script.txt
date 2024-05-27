@@ -1,0 +1,16 @@
+function doGet(){
+var sheet =SpreadsheetApp.getActiveSheet();
+var range= sheet.getDataRange();
+var values =range.getValues();
+var headers =values.shift();
+var result=[];
+values.forEach(function(row) {
+var obj={};
+row.forEach(function(value, index) {
+obj[headers[index]] = value;
+});
+result.push(obj);
+});
+var output =ContentService.createTextOutput(JSON.stringify(result)); output.setMimeType(ContentService.MimeType.JSON);
+return output;
+}
