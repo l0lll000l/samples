@@ -26,7 +26,7 @@ class Screenone extends StatelessWidget {
       ],
     ));
   }
-
+//-------------------------------------------------------------------------saving data to storage
   Future<void> saveDataToStorage() async {
     print(_textcontroller.text);
     final sharedpref = await SharedPreferences.getInstance();
@@ -35,7 +35,7 @@ class Screenone extends StatelessWidget {
   }
 }
 
-//use this for splash screen
+//use this for splash screen----------------------------------------------reading data
 Future<void> getSavedData(BuildContext context) async {
   final sharedprefs = await SharedPreferences.getInstance();
   final savedValue = sharedprefs.getString('saved_value');
