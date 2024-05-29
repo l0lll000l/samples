@@ -28,9 +28,7 @@ class GoogleSheetList extends StatefulWidget {
 
 class _GoogleSheetListState extends State<GoogleSheetList> {
   final String _credentials = r'''
-  {
-   
-  }
+  
   ''';
   final String _spreadsheetId = 'paste spreadsheetId here';
   final String _sheetTitle = 'Sheet1';
