@@ -8,7 +8,7 @@ import 'package:gsheets/gsheets.dart';
 
 class UserSheetApi {
   static const _credentials = r'''{
- //paste credentials here
+
 }
 ''';
   static final _spreadSheetId = 'paste spredsheet id here';
