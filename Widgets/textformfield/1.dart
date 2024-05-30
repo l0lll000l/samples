@@ -13,9 +13,9 @@ TextFormField(
         },
       ),
 /////////////////////////////////////////////////////////////////////
-Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextFormField(
+
+             
+         TextFormField(
                   style: TextStyle(color: Colors.white),
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
@@ -35,4 +35,4 @@ Padding(
                     return null;
                   },
                 ),
-              ),
+
