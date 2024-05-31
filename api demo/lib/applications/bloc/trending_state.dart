@@ -1,0 +1,19 @@
+part of 'trending_bloc.dart';
+
+@freezed
+class TrendingState with _$TrendingState {
+  const factory TrendingState(
+      {required bool isLoading,
+      required List<Trending>? trending,
+      required List<Trending>? popular,
+      required Option<Either<MainFailure, List<Trending>>>
+          trendingFaillureorSuccessOption}) = _TrendingState;
+  factory TrendingState.initial() {
+    return const TrendingState(
+      isLoading: false,
+      trendingFaillureorSuccessOption: None(),
+      trending: [],
+      popular: [],
+    );
+  }
+}
