@@ -47,24 +47,10 @@ map.forEach((key, value) {
 var newMap = map.map((key, value) => MapEntry(key, value * 10));
 print(newMap); // {'a': 10, 'b': 20, 'c': 30}
 
-...........................................
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-  
 .....................................................................
                                  addAll: Adds all key-value pairs from another map to the current map.
 var map1 = {'a': 1, 'b': 2};
