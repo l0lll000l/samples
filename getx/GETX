@@ -55,28 +55,16 @@ Text(
 //---------------------------------------------------------------- use obx to change value
 
 class Tapcontroller extends GetxController {
- 
-
   RxInt _y = 0.obs;
   RxInt get y => _y;
 
-
-
   void increaseY() {
     _y.value++;
-
-
   }
-
   void decreaseY() {
     _y.value--;
-
   }
 }
-
-
-
-
  Obx(() {
             return Text(Get.find<Tapcontroller>().y.value.toString());
           }
