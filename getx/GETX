@@ -35,5 +35,57 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-***************************************************************************************************
 
+//---------------------------------------------------------------- Access  the value from another page
+   Tapcontroller controller = Get.find();       // dependancy injection
+
+  GetBuilder<Tapcontroller>(
+                builder: (controller) {
+                  return Text(
+                    controller.x.toString(),
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  );
+                },
+              )
+//---------------------------------------------------------------- directly access, no dependancy injection
+Text(
+        Get.find<Tapcontroller>().x.toString(),
+                style: TextStyle(fontSize: 20, color: Colors.white),
+              )
+//---------------------------------------------------------------- use obx to change value
+
+class Tapcontroller extends GetxController {
+ 
+
+  RxInt _y = 0.obs;
+  RxInt get y => _y;
+
+
+
+  void increaseY() {
+    _y.value++;
+
+
+  }
+
+  void decreaseY() {
+    _y.value--;
+
+  }
+}
+
+
+
+
+ Obx(() {
+            return Text(Get.find<Tapcontroller>().y.value.toString());
+          }
+***************************************************************************************************
+//--------------------------------------------------------------page route
+ onTap: () { Get.to(() {  return FirstPage();  });},           // going to a page
+//---------------------------------------------------------------back button
+onPressed: () {
+              Get.back();
+            },
+
+*****************************************************************************************************
