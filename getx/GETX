@@ -1,0 +1,39 @@
+ //--------------------------------------------------------create function 
+class Tapcontroller extends GetxController {
+  int _x = 0;
+  int get x => _x;
+  void increaseX() {
+    _x++;
+    update();
+    print(_x);
+  }
+}
+// ---------------------------------------------------------- dependency injection
+ Tapcontroller controller = Get.put(Tapcontroller());
+//------------------------------------------------------------ access
+  onTap: () {
+                controller.increaseX();
+           },
+
+//------------------------------------------------------------show value value
+  GetBuilder<Tapcontroller>(
+              builder: (_) {
+                return Text(controller.x.toString());
+              },
+            ),
+//------------------------------------------------------------- set materialApp to GetMaterialApp
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      title: 'Getx',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+***************************************************************************************************
+
