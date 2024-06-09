@@ -72,7 +72,7 @@ class Tapcontroller extends GetxController {
  Obx(() {
             return Text(Get.find<Tapcontroller>().y.value.toString());
           }
-***************************************************************************************************
+*************************************************************************************************** Page Route
 //--------------------------------------------------------------page route
  onTap: () { Get.to(() {  return FirstPage();  });},           // going to a page
 //---------------------------------------------------------------back button
@@ -80,4 +80,12 @@ onPressed: () {
               Get.back();
             },
 
-*****************************************************************************************************
+***************************************************************************************************** Adding values to list
+class ListController extends GetxController {
+  RxList _list = [].obs;
+  RxList get list => _list;
+  void setValues(int x) {
+    _list.add(x);
+    print(_list);
+  }
+}
