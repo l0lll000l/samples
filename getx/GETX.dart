@@ -1,4 +1,21 @@
- //--------------------------------------------------------create function 
+
+
+//------------------------------------------------------------- set materialApp to GetMaterialApp
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      title: 'Getx',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+//--------------------------------------------------------create class and function 
 class Tapcontroller extends GetxController {
   int _x = 0;
   int get x => _x;
@@ -21,20 +38,7 @@ class Tapcontroller extends GetxController {
                 return Text(controller.x.toString());
               },
             ),
-//------------------------------------------------------------- set materialApp to GetMaterialApp
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Getx',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(),
-    );
-  }
-}
 
 //---------------------------------------------------------------- Access  the value from another page
    Tapcontroller controller = Get.find();       // dependancy injection
