@@ -59,3 +59,38 @@ TextFormField(
       },
     );
   }
+//////////////////////////////////////////////////////////////////////////////
+ TextFormField(
+                            validator: (val) {
+                              return RegExp(
+                                          r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                      .hasMatch(val!)
+                                  ? null
+                                  : "Please enter a valid email";A
+                            },
+                            controller: emailController,
+                            onChanged: (value) {
+                              email = emailController.text;
+                            },
+                            style: const TextStyle(color: Colors.black),
+                            decoration: const InputDecoration(
+                              errorBorder: OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(width: 2, color: kOrange)),
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(width: 2, color: kOrange)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(width: 2, color: Colors.blue)),
+                              border: OutlineInputBorder(),
+                              labelText: 'Email',
+                              labelStyle: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.normal),
+                              prefixIcon: Icon(
+                                Icons.email,
+                                color: kOrange,
+                              ),
+                            ),
+                          ),
