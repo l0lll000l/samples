@@ -1,4 +1,25 @@
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+      options: FirebaseOptions(
+    apiKey: "AIzaSyBJssNr6OFw5W7DAJPT2u2iEugHmF1ao68",
+    appId: "1:332187799493:web:58e74f9f809bc186fd05ac",
+    messagingSenderId: "332187799493",
+    projectId: "chatapp-b6e6f",
+  ));
 
+  runApp(const MyApp());
+}
+
+//-----------------------------------------------------------------------
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(const MyApp());
+}
+//--------------------------------------------------------------------
 final CollectionReference donor =
       FirebaseFirestore.instance.collection('Users');
 //-------------------------------------------------------------------- Add Donor
