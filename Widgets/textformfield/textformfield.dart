@@ -113,6 +113,22 @@ textformfieldDecoration({labelText, icon}) {
   );
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+  final formkey = GlobalKey<FormState>();
 
+  validator: (val) {
+                  return RegExp(
+                              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                          .hasMatch(val!)
+                      ? null
+                      : "Please enter a valid email";
+                },
+/-------------------------------------------------------------------------------------------------
+  validator: (val) {
+                  if (val!.length < 6) {
+                    return "Password must be at least 6 characters";
+                  } else {
+                    return null;
+                  }
+                },
         
-        
+//-////////////////////////////////////////////////////////////////////////////////////////////////////        
