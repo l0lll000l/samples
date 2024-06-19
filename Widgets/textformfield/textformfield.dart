@@ -94,3 +94,41 @@ TextFormField(
                               ),
                             ),
                           ),
+//////////////////////////////////////////////////////////////////////////////////////////////////
+-----------------------------------------------------------------------------------------------decoration paste it on decoration
+textformfieldDecoration({labelText, icon}) {
+  return InputDecoration(
+    focusedBorder: const OutlineInputBorder(
+        borderSide: BorderSide(width: 2, color: Colors.blue)),
+    enabledBorder:
+        OutlineInputBorder(borderSide: BorderSide(width: 2, color: korange)),
+    border: const OutlineInputBorder(),
+    labelText: labelText,
+    labelStyle: const TextStyle(color: Colors.black),
+    hintStyle: const TextStyle(color: Colors.black),
+    prefixIcon: Icon(
+      icon,
+      color: Colors.black,
+    ),
+  );
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////
+  final formkey = GlobalKey<FormState>();
+
+  validator: (val) {
+                  return RegExp(
+                              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                          .hasMatch(val!)
+                      ? null
+                      : "Please enter a valid email";
+                },
+/-------------------------------------------------------------------------------------------------
+  validator: (val) {
+                  if (val!.length < 6) {
+                    return "Password must be at least 6 characters";
+                  } else {
+                    return null;
+                  }
+                },
+        
+//-////////////////////////////////////////////////////////////////////////////////////////////////////        
