@@ -47,3 +47,4 @@ git commit                                     //[master (root-commit) bc83faf] 
   git diff master test                         //check difference
   git merge test                               //merge two branches
   //----------------------------------------------------------------------------------------------------
+  ssh-keygen -C "Email id"                     // keygenerate  
