@@ -27,6 +27,7 @@ git commit                                     //[master (root-commit) bc83faf] 
 //----------------------------------------------------------------------------------------------------branch
   git branch                                   //show all branches
   git branch myFeature                         //create new branch named myFeature
+  git branch -M main                           //change branch name
   git checkout myFeature                       //change head to myFeature
   git checkout master                          //change head to master
   git log myFeature 
