@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "570476177146",
+    "project_id": "chat-app-last-try",
+    "storage_bucket": "chat-app-last-try.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570476177146:android:0ccb65c74f4e8eff370b43",
+        "android_client_info": {
+          "package_name": "com.example.chatapplasttry"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByeUR8p3oe4wWgWXjtjSq7xIIrLNgMaA0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
