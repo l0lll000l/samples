@@ -19,3 +19,6 @@ git commit                                     //[master (root-commit) bc83faf] 
   git checkout master                          //back to normal
   git diff                                     //recently modified things will show
   git reset HEAD~2 --hard                      //remove 2 commits      
+  git reset HEAD-2                             // soft reset.  files dont delete
+  git reset --hard                             //delete new modifications
+  git checkout HEAD -f                         //delete new modifications
