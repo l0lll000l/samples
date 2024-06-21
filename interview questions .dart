@@ -46,11 +46,28 @@ void main() {
   controller.close();
 }
 OUTPUT
-Broadcast Stream Listener 1: 1
-Broadcast Stream Listener 2: 1
-Broadcast Stream Listener 1: 2
-Broadcast Stream Listener 2: 2
-Broadcast Stream Listener 1: 3
-Broadcast Stream Listener 2: 3
+//Broadcast Stream Listener 1: 1
+//Broadcast Stream Listener 2: 1
+//Broadcast Stream Listener 1: 2
+//Broadcast Stream Listener 2: 2
+//Broadcast Stream Listener 1: 3
+//Broadcast Stream Listener 2: 3
+
+10. pubspec.yaml                 = it is a configurationn file. that specifies the project's dependencies,such as packages and their versions
+11. 4 main elements              = flutter engine
+                                   widgets
+                                   design-specific widgets
+                                   foundation library
+12. name some best editors       = android studio
+                                   visual studio
+                                   emac
+                                   codemagic
+                                   intelluj idea
+13. stateless widget             = immutable,its properties cannot change onnce the widget is built
+                                   doesnot have state
+                                   
+14. statefull Widget             = mutable , its properties change over time
+                                   manage state using setstate
+                                   
 
 
