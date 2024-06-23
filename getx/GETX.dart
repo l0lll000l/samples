@@ -1,4 +1,5 @@
-
+Get.to(const LoginScreen()                 = next page
+Get.offAll(const LoginScreen()             = next page replace
 
 //------------------------------------------------------------- set materialApp to GetMaterialApp
 
