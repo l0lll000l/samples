@@ -1,0 +1,42 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
+
+class NavigationMenu extends StatelessWidget {
+  const NavigationMenu({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final controller = Get.put(NavigationController());
+    return Scaffold(
+        bottomNavigationBar: Obx(
+          () => NavigationBar(
+              onDestinationSelected: (value) {
+                controller.selectedIndex.value = value;
+              },
+              selectedIndex: controller.selectedIndex.value,
+              elevation: 0,
+              height: 80,
+              destinations: const [
+                NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
+                NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
+                NavigationDestination(
+                    icon: Icon(Iconsax.heart), label: 'WishList'),
+                NavigationDestination(
+                    icon: Icon(Iconsax.user), label: 'Profile'),
+              ]),
+        ),
+        body: Obx(() => controller.screens[controller.selectedIndex.value]));
+  }
+}
+
+class NavigationController extends GetxController {
+  final RxInt selectedIndex = 0.obs;
+
+  final screens = [
+    Container(color: Colors.green),
+    Container(color: Colors.purple),
+    Container(color: Colors.green),
+    Container(color: Colors.orange),
+  ];
+}
