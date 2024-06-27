@@ -1,5 +1,5 @@
 
-
+----------------------------------------------------------------------- primary header
 class PrimaryHeader extends StatelessWidget {
   const PrimaryHeader({
     super.key,
@@ -39,4 +39,89 @@ class PrimaryHeader extends StatelessWidget {
   }
 }
 
-![Screenshot_1719478292](https://github.com/l0lll000l/samples/assets/114205296/568af516-a43d-43c2-a480-84b8c3a0c9fc)
+-----------------------------------------------------------------------------------------  curved widget 
+  class TCurvedEdgeWidget extends StatelessWidget {
+  const TCurvedEdgeWidget({
+    super.key,
+    required this.child,
+  });
+  final Widget child;
+  @override
+  Widget build(BuildContext context) {
+    return ClipPath(clipper: TcustomCurvedEdges(), child: child);
+  }
+}
+-----------------------------------------------------------------------------------------   circular container
+  class TCircularContainer extends StatelessWidget {
+  const TCircularContainer(
+      {super.key,
+      this.width = 400,
+      this.height = 400,
+      this.radius = 400,
+      this.padding = 0,
+      this.backgroundColor = TColors.light,
+      this.child,
+      this.margin});
+  final double width;
+  final double height;
+  final double? radius;
+  final double? padding;
+  final Widget? child;
+  final Color backgroundColor;
+  final EdgeInsets? margin;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: margin,
+      width: width,
+      height: height,
+      padding: EdgeInsets.all(padding!),
+      decoration: BoxDecoration(
+          color: backgroundColor, borderRadius: BorderRadius.circular(radius!)),
+      child: child,
+    );
+  }
+}
+
+-----------------------------------------------------------------------------------------  curved edges
+class TcustomCurvedEdges extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    var path = Path();
+    path.lineTo(0, size.height);
+    final firstcurve = Offset(0, size.height - 20);
+    final lastCurve = Offset(30, size.height - 20);
+    path.quadraticBezierTo(
+        firstcurve.dx, firstcurve.dy, lastCurve.dx, lastCurve.dy);
+
+    final secondFirstCurve = Offset(0, size.height - 20);
+    final secondLastCurve = Offset(size.width - 30, size.height - 20);
+    path.quadraticBezierTo(secondFirstCurve.dx, secondFirstCurve.dy,
+        secondLastCurve.dx, secondLastCurve.dy);
+
+    final thirdFirstCurve = Offset(size.width, size.height - 20);
+    final thirdLastCurve = Offset(size.width, size.height);
+    path.quadraticBezierTo(thirdFirstCurve.dx, thirdFirstCurve.dy,
+        thirdLastCurve.dx, thirdLastCurve.dy);
+
+    path.lineTo(size.width, 0);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
+    return true;
+  }
+}
+
+  
+----------------------------------------------------------------------------------------- 
+
+
+
+  
+----------------------------------------------------------------------------------------- 
+
+
+
