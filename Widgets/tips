@@ -1,2 +1,3 @@
 automaticallyImplyLeading: false,     = appbar leading arrow back remove
 physics: NeverScrollableScrollPhysics(),  = makes listview aor grid scrollable
+flexible()   = solve height issues 
