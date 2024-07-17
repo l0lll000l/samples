@@ -1,1 +1,2 @@
 flutter build apk --analyze-size --target-platform android-arm64
+build :  flutter build apk --target-platform android-arm64 --split-debug-info --shrink --obfuscate --dart-define=BUILD_MODE=release
