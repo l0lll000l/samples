@@ -1,0 +1,11 @@
+  IconButton(
+                          onPressed: () {
+                            const url =
+                                '  https://www.linkedin.com/in/l0lll000l';
+
+                            html.window.open(url, '_blank');
+                          },
+                          icon: const Image(
+                            image: AssetImage(XImages.linkedin),
+                            height: 30,
+                          )),
