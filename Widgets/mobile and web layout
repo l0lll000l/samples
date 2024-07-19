@@ -1,0 +1,21 @@
+import 'package:flutter/material.dart';
+
+class responsiveLayout extends StatelessWidget {
+  const responsiveLayout(
+      {super.key, required this.mobileBody, required this.tabletBody});
+  final Widget mobileBody;
+  final Widget tabletBody;
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth < 600) {
+          return mobileBody;
+        } else {
+          return tabletBody;
+        }
+      },
+    );
+  }
+}
