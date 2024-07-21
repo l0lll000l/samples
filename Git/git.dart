@@ -15,6 +15,7 @@ git commit                                     //[master (root-commit) bc83faf] 
   git log                                      // print previous logs
 //---------------------------------------------------------------------------------------------------main operations
   git add .                                    //add all files
+  git rm --cached lib/some_file.dart           //remove file from tracking
   git checkout a1205c264d96490b0c429015aa0bc41d1e86c94f    //detatch head
   git checkout master                          //back to normal
   git diff                                     //recently modified things will show
