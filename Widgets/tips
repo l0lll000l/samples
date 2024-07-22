@@ -1,6 +1,7 @@
 flutter run -d chrome --web-renderer html // to run the app
 
 flutter build web --web-renderer html --release // to generate a production build
+flutter build apk --release --split-per-abi  //command is used to create separate APK files for each target ABI (Application Binary Interface). This means that instead of producing a single APK file that includes binaries for all supported ABIs, Flutter will generate multiple APKs, each optimized for a specific ABI. This can reduce the size of the APK that users need to download and install.
 
 automaticallyImplyLeading: false,     = appbar leading arrow back remove
 physics: NeverScrollableScrollPhysics(),  = makes listview aor grid scrollable
