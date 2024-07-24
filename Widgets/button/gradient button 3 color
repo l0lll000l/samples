@@ -1,0 +1,75 @@
+import 'package:flutter/material.dart';
+
+class GradientButton extends StatelessWidget {
+  final Widget child;
+  final Gradient gradient;
+  final VoidCallback onPressed;
+
+  GradientButton({
+    required this.child,
+    required this.gradient,
+    required this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 30,
+      width: 70,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.zero,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+        ),
+        onPressed: onPressed,
+        child: Ink(
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.transparent,
+            ),
+            gradient: gradient,
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: Container(alignment: Alignment.center, child: child),
+        ),
+      ),
+    );
+  }
+}
+
+        GradientButton(
+            gradient: const LinearGradient(
+              colors: [Colors.blue, Colors.purple, Colors.pink, Colors.orange],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            onPressed: () async {
+              final Uri gmailUri = Uri(
+                scheme: 'https',
+                host: 'mail.google.com',
+                path: '/mail/u/0/',
+                queryParameters: {
+                  'view': 'cm',
+                  'fs': '1',
+                  'to': 'athulmp86@gmail.com',
+                  'su': 'Subject', // Optional
+                  'body': 'Body', // Optional
+                  'bcc': 'athulmp9744@gmail.com', // Optional
+                  //  'cc': '', // Optional
+                },
+              );
+
+              if (await canLaunchUrl(gmailUri)) {
+                await launchUrl(gmailUri);
+              } else {
+                print('Could not launch $gmailUri');
+                // Show a user-friendly message or dialog
+              }
+            },
+            child: Text('Lets Talk',
+                style: Theme.of(context)
+                    .textTheme
+                    .labelMedium!
+                    .apply(color: Colors.white))),
