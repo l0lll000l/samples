@@ -1,0 +1,37 @@
+ IconButton(
+            onPressed: () async {
+              const url = 'https://github.com/l0lll000l';
+
+              html.window.open(url, '_blank');
+            },
+            icon: const Image(
+              image: AssetImage(XImages.github),
+              height: 30,
+            )),    IconButton(
+            onPressed: () async {
+              final Uri gmailUri = Uri(
+                scheme: 'https',
+                host: 'mail.google.com',
+                path: '/mail/u/0/',
+                queryParameters: {
+                  'view': 'cm',
+                  'fs': '1',
+                  'to': 'athulmp86@gmail.com',
+                  'su': 'Subject', // Optional
+                  'body': 'Body', // Optional
+                  'bcc': 'athulmp9744@gmail.com', // Optional
+                  //  'cc': '', // Optional
+                },
+              );
+
+              if (await canLaunchUrl(gmailUri)) {
+                await launchUrl(gmailUri);
+              } else {
+                print('Could not launch $gmailUri');
+                // Show a user-friendly message or dialog
+              }
+            },
+            icon: const Image(
+              image: AssetImage(XImages.email),
+              height: 32,
+            )),
